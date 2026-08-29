@@ -31,9 +31,9 @@ export function Footer() {
             <Image
               src="/brand/gauto-logo-negative.png"
               alt="Gauto Laser"
-              width={160}
-              height={160}
-              className="h-24 w-auto"
+              width={920}
+              height={566}
+              className="h-20 w-auto"
             />
             <p className="mt-4 max-w-xs text-sm text-gauto-champagne/70">
               Estética a laser premium em Cáceres-MT. Tecnologia 4D para todos os tons de pele.

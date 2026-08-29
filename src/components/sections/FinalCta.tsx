@@ -9,8 +9,8 @@ export function FinalCta() {
           src="/brand/gauto-submark-gold.png"
           alt=""
           aria-hidden="true"
-          width={48}
-          height={48}
+          width={232}
+          height={116}
           className="mx-auto h-10 w-auto"
         />
         <h2 className="type-display mt-6 text-2xl text-gauto-graphite md:text-4xl">

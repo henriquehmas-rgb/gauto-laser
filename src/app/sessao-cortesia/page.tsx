@@ -50,8 +50,8 @@ export default function SessaoCortesia() {
             src="/brand/gauto-submark-gold.png"
             alt=""
             aria-hidden="true"
-            width={40}
-            height={40}
+            width={232}
+            height={116}
             className="mt-10 h-9 w-auto"
           />
         </div>

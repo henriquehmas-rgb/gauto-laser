@@ -33,7 +33,7 @@ export function ComboBuilder() {
   }
 
   return (
-    <section id="combo" className="scroll-mt-24 border-y border-gauto-hairline bg-gauto-ivory">
+    <section id="combo" className="scroll-mt-36 border-y border-gauto-hairline bg-gauto-ivory">
       <div className="mx-auto max-w-6xl px-4 py-16 md:px-6 md:py-24">
         <SectionEyebrow>Monte sua combinação</SectionEyebrow>
         <h2 className="type-display mt-3 text-2xl text-gauto-graphite md:text-4xl">

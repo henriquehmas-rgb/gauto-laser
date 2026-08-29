@@ -10,7 +10,7 @@ export function EntryOffer() {
   if (!entryOffer.enabled) return null;
 
   return (
-    <section id="oferta" className="dark scroll-mt-24 bg-gauto-graphite text-gauto-champagne">
+    <section id="oferta" className="dark scroll-mt-36 bg-gauto-graphite text-gauto-champagne">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 md:grid-cols-2 md:px-6 md:py-24">
         <div>
           <SectionEyebrow className="text-gauto-gold">Oferta de entrada</SectionEyebrow>
@@ -55,8 +55,8 @@ export function EntryOffer() {
             src="/brand/gauto-submark-gold.png"
             alt=""
             aria-hidden="true"
-            width={44}
-            height={44}
+            width={232}
+            height={116}
             className="mx-auto mb-5 h-10 w-auto"
           />
           <LeadForm source="entry_offer" dark />

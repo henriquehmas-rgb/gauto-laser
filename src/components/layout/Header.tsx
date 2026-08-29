@@ -20,14 +20,15 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-gauto-hairline bg-gauto-champagne/85 backdrop-blur-md">
-      <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-4 md:h-24 md:px-6">
-        <Link href="/" aria-label="Gauto Laser — início" className="flex items-center">
+      <div className="mx-auto flex h-28 max-w-6xl items-center justify-between px-4 md:h-36 md:px-6">
+        <Link href="/" aria-label="Gauto Laser — início" className="flex shrink-0 items-center py-3">
+          {/* arquivo já cortado no conteúdo real (920×566) — width/height corretos evitam distorção/blur do next/image */}
           <Image
             src="/brand/gauto-logo.png"
             alt="Gauto Laser"
-            width={220}
-            height={220}
-            className="h-16 w-auto md:h-20"
+            width={920}
+            height={566}
+            className="h-20 w-auto md:h-28"
             priority
           />
         </Link>

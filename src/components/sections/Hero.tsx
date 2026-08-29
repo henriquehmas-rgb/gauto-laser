@@ -41,9 +41,9 @@ export function Hero() {
             src="/brand/gauto-logo-negative.png"
             alt=""
             aria-hidden="true"
-            width={220}
-            height={220}
-            className="mx-auto h-36 w-auto md:h-44"
+            width={920}
+            height={566}
+            className="mx-auto h-32 w-auto md:h-44"
             priority
           />
         </motion.div>
