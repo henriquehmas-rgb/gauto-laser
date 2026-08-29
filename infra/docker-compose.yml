@@ -1,0 +1,20 @@
+networks:
+  traefik:
+    external: true
+
+services:
+  web:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    networks: [ traefik ]
+    mem_limit: 512m
+    cpus: 0.5
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=traefik"
+      - "traefik.http.routers.gautolaser.entrypoints=websecure"
+      - "traefik.http.routers.gautolaser.rule=Host(`gautolaser.com.br`) || Host(`www.gautolaser.com.br`)"
+      - "traefik.http.routers.gautolaser.tls.certresolver=letsencrypt"
+      - "traefik.http.services.gautolaser.loadbalancer.server.port=3000"
