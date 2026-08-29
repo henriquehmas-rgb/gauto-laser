@@ -50,7 +50,7 @@ export function Quiz() {
   const result = done ? treatments.find((t) => t.slug === quizResultMap[answers.goal ?? "pelos"]) : null;
 
   return (
-    <section id="quiz" className="scroll-mt-20 bg-gauto-champagne">
+    <section id="quiz" className="scroll-mt-24 bg-gauto-champagne">
       <div className="mx-auto max-w-3xl px-4 py-16 md:px-6 md:py-24">
         <SectionEyebrow>Quiz</SectionEyebrow>
         <h2 className="type-display mt-3 text-2xl text-gauto-graphite md:text-4xl">

@@ -20,14 +20,14 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-gauto-hairline bg-gauto-champagne/85 backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 md:px-6">
+      <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-4 md:h-24 md:px-6">
         <Link href="/" aria-label="Gauto Laser — início" className="flex items-center">
           <Image
             src="/brand/gauto-logo.png"
             alt="Gauto Laser"
-            width={120}
-            height={120}
-            className="h-14 w-auto"
+            width={220}
+            height={220}
+            className="h-16 w-auto md:h-20"
             priority
           />
         </Link>

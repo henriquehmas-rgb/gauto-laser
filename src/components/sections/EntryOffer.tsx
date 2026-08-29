@@ -10,7 +10,7 @@ export function EntryOffer() {
   if (!entryOffer.enabled) return null;
 
   return (
-    <section id="oferta" className="dark scroll-mt-20 bg-gauto-graphite text-gauto-champagne">
+    <section id="oferta" className="dark scroll-mt-24 bg-gauto-graphite text-gauto-champagne">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 md:grid-cols-2 md:px-6 md:py-24">
         <div>
           <SectionEyebrow className="text-gauto-gold">Oferta de entrada</SectionEyebrow>

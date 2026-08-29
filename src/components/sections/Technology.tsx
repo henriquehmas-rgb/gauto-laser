@@ -69,7 +69,7 @@ export function Technology() {
   }, []);
 
   return (
-    <section id="tecnologia" className="dark scroll-mt-20 bg-gauto-graphite text-gauto-champagne">
+    <section id="tecnologia" className="dark scroll-mt-24 bg-gauto-graphite text-gauto-champagne">
       <div className="mx-auto max-w-6xl px-4 py-16 md:px-6 md:py-24">
         <SectionEyebrow className="text-gauto-gold">Tecnologia 4D</SectionEyebrow>
         <h2 className="type-display mt-3 text-2xl md:text-4xl">

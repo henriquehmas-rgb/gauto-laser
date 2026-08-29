@@ -35,7 +35,7 @@ export function Location() {
   const status = useOpenStatus();
 
   return (
-    <section id="localizacao" className="scroll-mt-20 border-y border-gauto-hairline bg-gauto-ivory">
+    <section id="localizacao" className="scroll-mt-24 border-y border-gauto-hairline bg-gauto-ivory">
       <div className="mx-auto max-w-6xl px-4 py-16 md:px-6 md:py-24">
         <SectionEyebrow>Onde estamos</SectionEyebrow>
         <h2 className="type-display mt-3 text-2xl text-gauto-graphite md:text-4xl">
