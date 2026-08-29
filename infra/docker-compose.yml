@@ -4,6 +4,9 @@ networks:
   traefik:
     external: true
 
+volumes:
+  leads-data:
+
 services:
   web:
     build:
@@ -11,6 +14,8 @@ services:
       dockerfile: Dockerfile
     restart: unless-stopped
     networks: [ traefik ]
+    volumes:
+      - leads-data:/app/data
     mem_limit: 512m
     cpus: 0.5
     labels:
