@@ -1,26 +1,217 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-montserrat);
+  --font-display: var(--font-cinzel);
+  --font-editorial: var(--font-cormorant);
+  --font-heading: var(--font-cinzel);
+
+  /* Paleta institucional Gauto Laser (Manual de Identidade v1.0) */
+  --color-gauto-gold: var(--gauto-gold);
+  --color-gauto-gold-deep: var(--gauto-gold-deep);
+  --color-gauto-graphite: var(--gauto-graphite);
+  --color-gauto-champagne: var(--gauto-champagne);
+  --color-gauto-warm-gray: var(--gauto-warm-gray);
+  --color-gauto-hairline: var(--gauto-hairline);
+  --color-gauto-ivory: var(--gauto-ivory);
+  --color-cryo: var(--cryo);
+
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+
+  /* Manual: cantos sempre retos */
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --radius-xl: 0;
+  --radius-2xl: 0;
+  --radius-3xl: 0;
+  --radius-4xl: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  /* ============ Design tokens — Manual de Identidade Gauto Laser ============ */
+  --gauto-gold: #c8a070; /* Dourado Gauto — Pantone 728 C */
+  --gauto-gold-deep: #806040; /* Bronze Profundo — Pantone 875 C */
+  --gauto-gold-gradient: linear-gradient(160deg, #c8a070 0%, #806040 100%);
+  --gauto-graphite: #383838; /* Preto Grafite — Pantone 447 C */
+  --gauto-graphite-deep: #2b2b2b; /* variação p/ profundidade em fundos escuros */
+  --gauto-champagne: #f6f1e8; /* fundo claro padrão */
+  --gauto-warm-gray: #a79c8e; /* neutro de apoio */
+  --gauto-hairline: #e3d9c9;
+  --gauto-ivory: #fdfbf7; /* superfície elevada sobre champagne */
+  --cryo: #9bd7e8; /* só na narrativa do resfriamento -10 °C */
+  --gauto-tracking-label: 0.28em;
+
+  /* ============ Mapeamento shadcn → paleta institucional ============ */
+  --background: var(--gauto-champagne);
+  --foreground: var(--gauto-graphite);
+  --card: var(--gauto-ivory);
+  --card-foreground: var(--gauto-graphite);
+  --popover: var(--gauto-ivory);
+  --popover-foreground: var(--gauto-graphite);
+  --primary: var(--gauto-graphite);
+  --primary-foreground: var(--gauto-champagne);
+  --secondary: #ede5d8;
+  --secondary-foreground: var(--gauto-graphite);
+  --muted: #ede5d8;
+  --muted-foreground: #6b6257;
+  --accent: #ede5d8;
+  --accent-foreground: var(--gauto-graphite);
+  --destructive: #a3341f;
+  --border: var(--gauto-hairline);
+  --input: var(--gauto-hairline);
+  --ring: var(--gauto-gold);
+  --radius: 0rem;
+  --sidebar: var(--gauto-ivory);
+  --sidebar-foreground: var(--gauto-graphite);
+  --sidebar-primary: var(--gauto-graphite);
+  --sidebar-primary-foreground: var(--gauto-champagne);
+  --sidebar-accent: #ede5d8;
+  --sidebar-accent-foreground: var(--gauto-graphite);
+  --sidebar-border: var(--gauto-hairline);
+  --sidebar-ring: var(--gauto-gold);
+}
+
+.dark {
+  --background: var(--gauto-graphite);
+  --foreground: var(--gauto-champagne);
+  --card: var(--gauto-graphite-deep);
+  --card-foreground: var(--gauto-champagne);
+  --popover: var(--gauto-graphite-deep);
+  --popover-foreground: var(--gauto-champagne);
+  --primary: var(--gauto-champagne);
+  --primary-foreground: var(--gauto-graphite);
+  --secondary: #454545;
+  --secondary-foreground: var(--gauto-champagne);
+  --muted: #454545;
+  --muted-foreground: #bdb3a4;
+  --accent: #454545;
+  --accent-foreground: var(--gauto-champagne);
+  --destructive: #d06a55;
+  --border: rgba(200, 160, 112, 0.25);
+  --input: rgba(246, 241, 232, 0.15);
+  --ring: var(--gauto-gold);
+  --sidebar: var(--gauto-graphite-deep);
+  --sidebar-foreground: var(--gauto-champagne);
+  --sidebar-primary: var(--gauto-gold);
+  --sidebar-primary-foreground: var(--gauto-graphite);
+  --sidebar-accent: #454545;
+  --sidebar-accent-foreground: var(--gauto-champagne);
+  --sidebar-border: rgba(200, 160, 112, 0.25);
+  --sidebar-ring: var(--gauto-gold);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-montserrat), "Montserrat", "Archivo", sans-serif;
+    line-height: 1.65;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  /* Título display — Cinzel caixa-alta, tracking +6% */
+  .type-display {
+    font-family: var(--font-cinzel), "Cinzel", "Trajan Pro", serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    line-height: 1.15;
+  }
+  /* Título de seção — Cinzel, tracking +4% */
+  .type-section {
+    font-family: var(--font-cinzel), "Cinzel", "Trajan Pro", serif;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    line-height: 1.25;
+  }
+  /* Rótulo/overline — Montserrat 600 caixa-alta, tracking generoso */
+  .type-label {
+    font-family: var(--font-montserrat), "Montserrat", sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: var(--gauto-tracking-label);
+    line-height: 1.4;
+  }
+  /* Citação editorial — Cormorant Garamond itálico */
+  .type-editorial {
+    font-family: var(--font-cormorant), "Cormorant Garamond", Garamond, serif;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+  /* Filete dourado institucional */
+  .gold-hairline {
+    background: var(--gauto-gold-gradient);
+    height: 1px;
+  }
+  /* CTA primário — gradiente ouro sobre grafite (texto grafite p/ contraste AA) */
+  .btn-gold {
+    background: var(--gauto-gold-gradient);
+    color: #2b2b2b;
+    font-weight: 600;
+  }
+  .btn-gold:hover {
+    filter: brightness(1.06);
+  }
+  /* Pulse sutil do CTA do header: 1 ciclo a cada 6 s */
+  .animate-cta-pulse {
+    animation: cta-pulse 6s ease-in-out infinite;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .animate-cta-pulse {
+      animation: none;
+    }
+  }
+}
+
+@keyframes cta-pulse {
+  0%,
+  90%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(200, 160, 112, 0);
+  }
+  95% {
+    box-shadow: 0 0 0 6px rgba(200, 160, 112, 0.25);
+  }
 }

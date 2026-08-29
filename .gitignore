@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# leads locais (dev)
+/data/
+
+# relatórios de verificação
+/reports/

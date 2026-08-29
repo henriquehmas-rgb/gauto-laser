@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Gauto Laser — site institucional
 
-## Getting Started
+Landing page de conversão da **Gauto Laser** (estética a laser premium · Juba Center, Cáceres-MT).
+Next.js 16 (App Router, TypeScript, Tailwind v4, shadcn/ui) seguindo o **Manual de Identidade
+Visual v1.0** (champagne/grafite/dourado, Cinzel/Montserrat/Cormorant, cantos retos).
 
-First, run the development server:
+- **Produção:** https://gautolaser.com.br (VPS · Docker · Traefik/Let's Encrypt)
+- **Brief completo:** [docs/BRIEF.md](docs/BRIEF.md)
+- **Dados pendentes de negócio:** [docs/PENDENCIAS.md](docs/PENDENCIAS.md)
+- **Fotos/vídeos necessários:** [docs/ASSETS_NEEDED.md](docs/ASSETS_NEEDED.md)
+
+## Rodar localmente
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev   # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Deploy
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+git push  # (token: ver skill /conexoes)
+ssh vps "cd /docker/gauto-laser && bash infra/deploy.sh"
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Onde editar o quê
 
-## Learn More
+| O quê | Onde |
+|---|---|
+| Telefone, endereço, horários, oferta, preços | `src/config/site.config.ts` |
+| Tratamentos (textos, duração, preços) | `src/content/treatments.ts` |
+| FAQ | `src/content/faq.ts` |
+| Depoimentos | `src/content/testimonials.ts` |
+| Quiz (perguntas/mapeamento) | `src/content/quiz.ts` |
+| Tokens de design (cores/fontes do manual) | `src/app/globals.css` |
+| Logos e submarks | `public/brand/` |
 
-To learn more about Next.js, take a look at the following resources:
+## Leads
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+`POST /api/leads` valida com Zod (honeypot + rate limit 10/10min por IP) e grava em
+`data/leads.jsonl` no container. Se `LEAD_WEBHOOK_URL` estiver no ambiente, o lead é repassado
+(n8n/OpaSuite/CRM). Postgres/Drizzle: fase futura.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Ver leads em produção:
 
-## Deploy on Vercel
+```bash
+ssh vps "docker exec gauto-laser-web-1 cat data/leads.jsonl"
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Analytics
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Eventos empurrados para `window.dataLayer` (GTM carrega só após aceite de cookies — LGPD).
+Preencher `NEXT_PUBLIC_GTM_ID` no `.env` da VPS quando o contêiner GTM existir.
