@@ -33,7 +33,7 @@ export default function Regulamento() {
             <li>• Indicações são identificadas pelo link exclusivo ou pelo nome informado no cadastro.</li>
           </ul>
 
-          <p className="text-xs text-gauto-warm-gray">
+          <p className="text-xs text-muted-foreground">
             Dúvidas? Fale com a equipe pelo WhatsApp. Resultados variam por pessoa; consulte
             contraindicações.
           </p>

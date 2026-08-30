@@ -41,13 +41,25 @@ export default function PoliticaPrivacidade() {
           <h2 className="type-section text-lg text-gauto-graphite">Seus direitos</h2>
           <p>
             Você pode solicitar acesso, correção ou exclusão dos seus dados a qualquer momento
-            pelo WhatsApp ou e-mail da clínica. Responderemos em até 15 dias.
+            pelos canais abaixo. Responderemos em até 15 dias.
           </p>
-          <h2 className="type-section text-lg text-gauto-graphite">Contato</h2>
+          <h2 className="type-section text-lg text-gauto-graphite">Contato do encarregado</h2>
           <p>
             {siteConfig.brand.name} · {siteConfig.location.venue}, {siteConfig.location.city} —{" "}
-            {siteConfig.location.state}. Instagram {siteConfig.contact.instagram}.
+            {siteConfig.location.state}.
           </p>
+          <ul className="list-inside space-y-1">
+            {siteConfig.contact.email && (
+              <li>
+                E-mail:{" "}
+                <a href={`mailto:${siteConfig.contact.email}`} className="underline">
+                  {siteConfig.contact.email}
+                </a>
+              </li>
+            )}
+            <li>WhatsApp: canal de atendimento divulgado no site</li>
+            <li>Instagram: {siteConfig.contact.instagram}</li>
+          </ul>
         </div>
       </main>
       <Footer />

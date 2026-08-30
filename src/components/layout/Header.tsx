@@ -10,7 +10,7 @@ import { useState } from "react";
 const navLinks = [
   { href: "#tratamentos", label: "Tratamentos" },
   { href: "#tecnologia", label: "Tecnologia 4D" },
-  { href: "#como-funciona", label: "Benefícios" },
+  { href: "#como-funciona", label: "Como funciona" },
   { href: "#localizacao", label: "Localização" },
   { href: "#faq", label: "FAQ" },
 ];

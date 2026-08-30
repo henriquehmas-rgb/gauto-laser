@@ -101,7 +101,7 @@ export function Quiz() {
                     )}
                     <span>
                       {o.label}
-                      {o.hint && <span className="block text-xs text-gauto-warm-gray">{o.hint}</span>}
+                      {o.hint && <span className="block text-xs text-muted-foreground">{o.hint}</span>}
                     </span>
                   </button>
                 ))}
@@ -131,7 +131,7 @@ export function Quiz() {
                 <span>{result.sessionsEstimate}</span>
                 <span>{skinReassurance}</span>
               </div>
-              <p className="mt-4 text-[11px] text-gauto-warm-gray">
+              <p className="mt-4 text-[11px] text-muted-foreground">
                 Sujeito a avaliação profissional. Consulte contraindicações.
               </p>
               <div className="mt-6 flex flex-col gap-2 sm:flex-row">

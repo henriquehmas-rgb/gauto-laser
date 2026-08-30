@@ -50,6 +50,14 @@ export function Footer() {
               {location.city} — {location.state}, {location.zip}
             </p>
             <p className="mt-3">Seg–Sáb 10:00–22:00 · Dom 14:00–20:00</p>
+            {contact.email && (
+              <a
+                href={`mailto:${contact.email}`}
+                className="mt-3 inline-block text-gauto-gold transition-colors hover:text-gauto-champagne"
+              >
+                {contact.email}
+              </a>
+            )}
             <a
               href={`https://instagram.com/${contact.instagram.replace("@", "")}`}
               target="_blank"

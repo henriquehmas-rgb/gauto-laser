@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cinzel, Montserrat, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/config/site.config";
+import { isDraft } from "@/config/readiness";
 import { faq } from "@/content/faq";
 
 const cinzel = Cinzel({
@@ -37,6 +38,8 @@ export const metadata: Metadata = {
   description:
     "Epilação 4D praticamente indolor para todos os tons de pele, remoção de tatuagem e clareamento a laser. No Juba Center, em Cáceres-MT.",
   alternates: { canonical: "/" },
+  // Enquanto faltar dado de negócio, o site não entra em buscador (ver config/readiness.ts)
+  robots: isDraft() ? { index: false, follow: false } : undefined,
   openGraph: {
     type: "website",
     locale: "pt_BR",

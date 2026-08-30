@@ -43,7 +43,7 @@ export default function IndiqueEGanhe() {
 
         <ReferralShare />
 
-        <p className="mt-6 text-xs text-gauto-warm-gray">
+        <p className="mt-6 text-xs text-muted-foreground">
           Regras completas no{" "}
           <Link href="/regulamento" className="underline">
             regulamento

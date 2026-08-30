@@ -70,7 +70,7 @@ export function LeadForm({ source, className, dark = false, onSubmitted }: LeadF
     "min-h-11 w-full border bg-transparent px-3 py-2.5 text-sm outline-none transition-colors focus-visible:border-gauto-gold",
     dark
       ? "border-gauto-champagne/25 text-gauto-champagne placeholder:text-gauto-champagne/40"
-      : "border-gauto-hairline text-gauto-graphite placeholder:text-gauto-warm-gray",
+      : "border-gauto-hairline text-gauto-graphite placeholder:text-muted-foreground",
   );
   const labelClass = cn("mb-1.5 block text-xs font-semibold", dark ? "text-gauto-champagne/85" : "text-gauto-graphite");
   const errClass = "mt-1 text-xs text-destructive";
@@ -78,7 +78,11 @@ export function LeadForm({ source, className, dark = false, onSubmitted }: LeadF
   if (status === "done") {
     return (
       <div className={cn("text-center", className)} aria-live="polite">
-        <CheckCircle2 className="mx-auto size-10 text-gauto-gold" aria-hidden="true" />
+        {/* dourado claro só passa contraste sobre grafite; no fundo claro usa o bronze */}
+        <CheckCircle2
+          className={cn("mx-auto size-10", dark ? "text-gauto-gold" : "text-gauto-gold-deep")}
+          aria-hidden="true"
+        />
         <p className={cn("type-section mt-4 text-lg", dark ? "text-gauto-champagne" : "text-gauto-graphite")}>
           Recebemos seu cadastro!
         </p>

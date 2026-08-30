@@ -13,20 +13,25 @@ import { track } from "@/lib/analytics";
 function Counter({ target, suffix = "", prefix = "" }: { target: number; suffix?: string; prefix?: string }) {
   const reduced = useReducedMotion();
   const ref = useRef<HTMLSpanElement>(null);
-  // começa sempre em 0 (igual no SSR); com reduced-motion, salta direto no observer
-  const [value, setValue] = useState(0);
+  /**
+   * Renderiza o valor final no HTML: sem JS, com JS lento ou com script bloqueado,
+   * o número correto aparece — nunca "0". A contagem só zera e anima quando o
+   * elemento ainda está fora da tela no mount, então o salto nunca é visto.
+   */
+  const [value, setValue] = useState(target);
 
   useEffect(() => {
     const el = ref.current;
-    if (!el) return;
+    if (!el || reduced) return;
+
+    const belowFold = el.getBoundingClientRect().top > window.innerHeight;
+    if (!belowFold) return; // já visível: mantém o número final, sem piscar
+
+    setValue(0);
     const obs = new IntersectionObserver(
       (entries) => {
         if (!entries[0].isIntersecting) return;
         obs.disconnect();
-        if (reduced) {
-          setValue(target);
-          return;
-        }
         const start = performance.now();
         const dur = 1200;
         function tick(now: number) {

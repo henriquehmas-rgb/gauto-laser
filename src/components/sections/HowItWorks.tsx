@@ -34,7 +34,7 @@ export function HowItWorks() {
             <li key={s.title} className="border border-gauto-hairline bg-gauto-ivory p-7">
               <div className="flex items-center justify-between">
                 <s.icon className="size-6 text-gauto-gold-deep" aria-hidden="true" />
-                <span className="type-label text-[10px] text-gauto-warm-gray">Passo {i + 1}</span>
+                <span className="type-label text-[10px] text-muted-foreground">Passo {i + 1}</span>
               </div>
               <h3 className="type-section mt-4 text-lg text-gauto-graphite">{s.title}</h3>
               <p className="mt-2 text-sm text-gauto-graphite/80">{s.text}</p>

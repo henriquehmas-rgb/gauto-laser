@@ -39,7 +39,7 @@ export default function SessaoCortesia() {
               Plano de sessões personalizado, sem obrigação de compra
             </li>
           </ul>
-          <p className="mt-6 text-xs text-gauto-warm-gray">
+          <p className="mt-6 text-xs text-muted-foreground">
             Válida para {entryOffer.eligibility}. Veja o{" "}
             <Link href="/regulamento" className="underline">
               regulamento

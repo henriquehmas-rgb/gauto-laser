@@ -43,7 +43,7 @@ function TreatmentCard({ treatment }: { treatment: Treatment }) {
           </Badge>
         )}
       </div>
-      <p className="type-label mt-1 text-[10px] text-gauto-warm-gray">{treatment.techLabel}</p>
+      <p className="type-label mt-1 text-[10px] text-muted-foreground">{treatment.techLabel}</p>
       <p className="mt-3 text-sm text-gauto-graphite/85">{treatment.headline}</p>
 
       <ul className="mt-4 space-y-2 text-sm text-gauto-graphite/80">
@@ -77,7 +77,7 @@ function TreatmentCard({ treatment }: { treatment: Treatment }) {
         </WhatsAppButton>
         <TreatmentDetails treatment={treatment} />
       </div>
-      <p className="mt-4 text-[11px] text-gauto-warm-gray">
+      <p className="mt-4 text-[11px] text-muted-foreground">
         Sujeito a avaliação profissional. Consulte contraindicações.
       </p>
     </article>
@@ -140,7 +140,7 @@ function TreatmentDetails({ treatment }: { treatment: Treatment }) {
           </div>
         )}
 
-        <p className="mt-4 text-xs text-gauto-warm-gray">
+        <p className="mt-4 text-xs text-muted-foreground">
           Sujeito a avaliação profissional. Consulte contraindicações. Resultados variam por pessoa.
         </p>
 
@@ -186,7 +186,9 @@ export function Treatments() {
                 <TabsTrigger
                   key={c.key}
                   value={c.key}
-                  className="border border-gauto-hairline bg-gauto-ivory px-4 py-2 text-xs data-[state=active]:border-gauto-gold data-[state=active]:bg-gauto-graphite data-[state=active]:text-gauto-champagne"
+                  /* text-gauto-graphite força cor cheia: o padrão do shadcn é 60% de opacidade
+                     na aba inativa, que cai a 3.5:1 e reprova WCAG AA */
+                  className="border border-gauto-hairline bg-gauto-ivory px-4 py-2 text-xs text-gauto-graphite data-[state=active]:border-gauto-gold data-[state=active]:bg-gauto-graphite data-[state=active]:text-gauto-champagne"
                 >
                   {c.label}
                 </TabsTrigger>

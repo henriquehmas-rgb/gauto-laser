@@ -42,9 +42,9 @@ const compareRows: { label: string; laser4d: CompareValue | string; diodo: Compa
 function CompareCell({ value }: { value: CompareValue | string }) {
   if (value === "sim")
     return <Check className="mx-auto size-4 text-gauto-gold-deep" aria-label="Sim" />;
-  if (value === "nao") return <X className="mx-auto size-4 text-gauto-warm-gray" aria-label="Não" />;
+  if (value === "nao") return <X className="mx-auto size-4 text-muted-foreground" aria-label="Não" />;
   if (value === "parcial")
-    return <Minus className="mx-auto size-4 text-gauto-warm-gray" aria-label="Parcial" />;
+    return <Minus className="mx-auto size-4 text-muted-foreground" aria-label="Parcial" />;
   return <span>{value}</span>;
 }
 

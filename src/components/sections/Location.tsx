@@ -122,7 +122,7 @@ export function Location() {
               <p className="type-label mt-3 text-[10px] text-gauto-champagne/70">
                 Foto da fachada no Juba Center
               </p>
-              <p className="mt-1 text-xs text-gauto-champagne/50">(asset pendente)</p>
+              <p className="mt-1 text-xs text-gauto-champagne/75">(asset pendente)</p>
             </div>
           </div>
         </div>

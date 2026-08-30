@@ -68,7 +68,7 @@ export function ComboBuilder() {
           <aside className="h-fit border border-gauto-hairline bg-gauto-champagne p-6">
             <p className="type-label text-[10px] text-gauto-gold-deep">Sua combinação</p>
             {picked.length === 0 ? (
-              <p className="mt-3 text-sm text-gauto-graphite/70">
+              <p className="mt-3 text-sm text-gauto-graphite/80">
                 Nenhuma área selecionada ainda.
               </p>
             ) : (
@@ -106,7 +106,7 @@ export function ComboBuilder() {
                 Pedir orçamento no WhatsApp
               </WhatsAppButton>
             </div>
-            <p className="mt-3 text-[11px] text-gauto-warm-gray">
+            <p className="mt-3 text-[11px] text-muted-foreground">
               Valor final após avaliação profissional.
             </p>
           </aside>
